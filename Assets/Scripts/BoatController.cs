@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BoatController : MonoBehaviour
 {
-    public float forwardForce = 100f; // 前進の力
+    public float forwardForce = 1000000000f; // 前進の力
     public float backwardForce = 5f; // 後退の力
     public float rotationSpeed = 100f; // 回転の速度
 
