@@ -5,7 +5,7 @@ namespace NaughtyWaterBuoyancy
     public class WaterWaves : MonoBehaviour
     {
         [SerializeField]
-        private float speed = 1f;
+        public float speed = 1f;
 
         [SerializeField]
         private float height = 0.2f;
