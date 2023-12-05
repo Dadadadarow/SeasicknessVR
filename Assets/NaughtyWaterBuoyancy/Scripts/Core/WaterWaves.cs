@@ -8,7 +8,7 @@ namespace NaughtyWaterBuoyancy
         public float speed = 1f;
 
         [SerializeField]
-        private float height = 0.2f;
+        public float height = 0.2f;
 
         [SerializeField]
         private float noiseWalk = 0.5f;
