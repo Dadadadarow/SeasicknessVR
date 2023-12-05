@@ -17,7 +17,7 @@ public class BoatController : MonoBehaviour
     {
         if (taskManager.isMove)
         {
-            Debug.Log("Random moving");
+            // Debug.Log("Random moving");
             Vector3 randomForce = new Vector3(1f, 0f, 0f);
             rb.AddForce(randomForce*forwardForce);
             rb.AddTorque(transform.up * Random.Range(50, rotationSpeed));

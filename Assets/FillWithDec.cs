@@ -1,16 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class fillWithMove : MonoBehaviour
+public class FillWithDec : MonoBehaviour
 {
     public TCPHandler tcpHandler;
-    public AxisType _axis;
     public float _min;
     public float _max;
     public bool _moveWithSight = true;
-    public float _speed;
+    public float _speed = 1f;
     private float _normalizedValue;
     private float _axisFloat;
 	[SerializeField] private float _lerpValue;
@@ -29,16 +28,10 @@ public class fillWithMove : MonoBehaviour
     {
         if (_moveWithSight)
         {
-            float _ratio = 360/_normalizedValue;
-            if (_axis == AxisType.X)
-            {
-                _axisFloat = Mathf.Abs(Camera.main.transform.eulerAngles.y);
-            }
-            if (_axis == AxisType.Y)
-            {
-                _axisFloat = Mathf.Abs(Camera.main.transform.eulerAngles.x);
-
-            }
+            float _ratio = 100/_normalizedValue;
+            _axisFloat = tcpHandler.decodedValue;
+            // _axisFloat = Random.Range(60f, 100f);
+            // Debug.Log(_axisFloat);
             float _value = Mathf.Clamp(_axisFloat/_ratio, _min, _max);
 
             _lerpValue = Mathf.MoveTowards(_lerpValue, _value, _speed * Time.deltaTime);
