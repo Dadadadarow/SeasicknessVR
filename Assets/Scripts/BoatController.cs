@@ -16,8 +16,8 @@ public class BoatController : MonoBehaviour
     private void Update()
     {
         // 方向キーの入力を受け取る
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetKey(KeyCode.L) ? 1f : (Input.GetKey(KeyCode.J) ? -1f : 0f);
+        float verticalInput = Input.GetKey(KeyCode.I) ? 1f : (Input.GetKey(KeyCode.K) ? -1f : 0f);
 
         // 前進方向への力を加える
         if (verticalInput > 0)
@@ -36,4 +36,3 @@ public class BoatController : MonoBehaviour
         rb.AddTorque(transform.up * rotationSpeed * horizontalInput);
     }
 }
-
